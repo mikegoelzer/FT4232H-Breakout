@@ -1,0 +1,53 @@
+# Improvements for FT4232H Breakout Board v1
+
+This is a list of improvements to implement when transitioning from v0 to v1 of the board.
+
+- [ ] `MISO` and `MOSI` are reversed, as are the `DI`/`DO` silkscreens:
+  - [ ] Schematic net names: swap MISO and MOSI on pins 27 and 28 so they are like this:
+    - [ ] Pin 27:  MOSI
+    - [ ] Pin 28:  MISO
+    - [ ] Breakout pin 6:  MOSI
+    - [ ] Breakout pin 5:  MISO
+  - [ ] On PCB, now swap silkscreen DI/DO so they match:
+    - [ ] MOSI = DO
+    - [ ] MISO = DI
+- [ ] JTAG `TDI`/`TDO` are not reversed but naming is **ambiguous**:
+  - [ ] Schematic changes:
+    - [ ] DO NOT REVERSE ANYTHING
+    - [ ] Pin 17: change net name `TDI` -> `DO_TDI`
+    - [ ] Pin 18: change net name `TDO` -> `DI_TDO`
+    - [ ] Leave breakout pins unchanged (3=`DO_TDI`, 4=`DI_TDO`)
+  - [ ] PCB:
+    - [ ] If possible, change silkscreen on `3`:  `TDI` -> `TDI/DO`
+    - [ ] If possible, change silkscreen on `4`:  `TDO` -> `TDO/DI`
+- [ ] [Switch to a better 16P USB-C connector](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Initial one had through-hole pins that were hard to solder
+  - `USB4105-GF-A-120` is the right one for this
+    - (without the `-120` is ok too)
+- [ ] [Modify stencil apertures following IPC-7525 recommendations](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Reduce stencil aperture by 10-15% for fine-pitch pads (e.g., LFQP-64 part)
+  - Prevents bridging and wicking of solder up the leads during reflow
+- [ ] [Round the corners of stencil apertures](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Improves paste release
+  - Prevents bridging during reflow
+- [ ] [Increase the number of mousebites on each "assembly tab"](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Double the current amount
+  - Improves mechanical attachment of breakaway assembly tabs to the board
+- [ ] [Add non-plated holes on one of the assembly tabs](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Serves as a thermcouple attachment point
+- [ ] [Address USB-C connector height issue during back-side paste application](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Find standoffs of the exact right height
+  - Allows upside-down board to lie flat during back-side paste application
+- [ ] [Use stainless steel stencil](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Improves paste release and stencil durability
+  - Provides better edge definition for fine-pitch components
+- [ ] [Replace "hand solder" pads with regular sized 0805 pads](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Reduces board space usage
+  - Improves overall component density
+- [ ] [Expand UART breakout](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Break out additional signals beyond TX/RX for both UARTs
+  - Include at least DTR and RTS signals
+  - Enables programming of ESP32 modules and other devices requiring flow control
+  - Consider breaking out CTS and DSR if space allows for full UART functionality
+- [ ] [STRETCH GOAL: Redesign JTAG connection](https://github.com/mikegoelzer/ft4232h-breakout/issues/1)
+  - Replace 0.1" holes on the sides with a 3x2 JTAG connector on the top of the board to attach JTAG wires

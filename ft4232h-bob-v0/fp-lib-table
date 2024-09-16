@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ASEM1-12.000MHZ-LC-T")(type "KiCad")(uri "${KIPRJMOD}/lib/ASEM1_12_000MHZ_LC_T")(options "")(descr "ASEM1 12Mhz oscillator"))
+  (lib (name "PinHeader")(type "KiCad")(uri "${KIPRJMOD}/lib/CustomParts/PinHeader.pretty")(options "")(descr "Custom footprints for 2.54mm pin headers"))
+)
