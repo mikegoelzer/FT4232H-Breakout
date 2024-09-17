@@ -1,12 +1,22 @@
+# Reference:  
+#  - See `man ftdi_eeprom` for config file hints.
+#  - See `zcat /usr/share/doc/ftdi-eeprom/example.conf.gz` for example config file
+
+############
+# Filename #
+############
+#filename=eeprom.new               # Filename of the EE file to be generated. Leave empty to skip file writing
+
 # FTDI defaults
 vendor_id=0x0403
 product_id=0x6011
 
 # Rev 0 is self-powered
 self_powered=true
-max_power=0                     # in multiples of 2mA; use 0 if self_powered = true.
+max_power=0                        # in multiples of 2mA; use 0 if self_powered = true.
 
 # Strings
 manufacturer="MWG"
-product="Goelzer's FT4232H Breakout Rev0"   # this seems to have a length limit of ~20 chars
-#serial="08-18-2024"
+product="MWG's FT4232H Rev0"       # this seems to have a length limit of ~20 chars
+serial="091624"
+use_serial=true

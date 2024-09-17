@@ -24,9 +24,11 @@ Flashing from `config.txt` file's settings:
 make flash
 ```
 
-Note 1: it is not necessary to first erase the EEPROM.
+**Notes**
 
-Note 2: when the EEPROM is first initialized on a new board, `make flash` may need to be run **twice** for unknown reasons.
+ - You must UNPLUG and REPLUG the FTDI device for `make flash` changes to become visible to the OS.
+ - It is not necessary to first erase the EEPROM.
+ - When the EEPROM is first initialized on a new board, `make flash` may need to be run **twice** for unknown reasons.
 
 ### Erasing
 
