@@ -5773,6 +5773,19 @@
 		)
 		(uuid "a3d31495-15c1-44e6-acd7-0a01bd237c59")
 	)
+	(text "ERROR: these are swapped\n(see improvements.md)"
+		(exclude_from_sim no)
+		(at 182.88 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "ba562b38-90af-4de0-8b5a-48c3420eabd8")
+	)
 	(text "C13,C14: place close to \n3V3_IN input and VREGIN"
 		(exclude_from_sim no)
 		(at 250.444 105.41 0)
